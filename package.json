@@ -5,19 +5,22 @@
   "description": "",
   "scripts": {
     "start": "parcel src/index.html --open",
-    "clean": "rm -rf dist/*",
+    "clean": "rd /s /q dist",
     "build:parcel": "parcel build src/index.html --no-content-hash --no-source-maps --public-url ./",
-    "build": "npm run clean && npm run build:parcel"
+    "build": "npm run clean && npm run build:parcel",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/codrops/[NAME].git"
+    "url": "https://github.com/misalagp/TypingAnimation.git"
   },
   "keywords": [],
   "author": "MisalaGP",
   "license": "MIT",
   "homepage": "https://misala.de/",
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "parcel": "^2.8.3"
   },
   "dependencies": {
